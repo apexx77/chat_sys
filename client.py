@@ -4,7 +4,10 @@ HEADER = 64
 PORT = 1234
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "DISCONNECT"
+
+#Enter your ocal IP Address below
 SERVER = ""
+
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,5 +23,5 @@ def send(msg) :
     print(client.recv(2048).decode(FORMAT))
 
 send("HELLO WORLD")
-
+input()
 send(DISCONNECT_MESSAGE)
