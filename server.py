@@ -13,6 +13,7 @@ server.bind(ADDR)
 print("Enter your name: ")
 server_name = input()
 
+#Handling the client connection
 def handle_client(conn, addr) :
     print(f"[NEW CONNECTION] {addr} connected.")
     client_name = conn.recv(1024).decode(FORMAT)
@@ -32,6 +33,7 @@ def handle_client(conn, addr) :
                 conn.send(server_msg.encode(FORMAT))
     conn.close()
 
+#Main Function
 def start() :
     server.listen()
     print(f"[LISTENING] Server is listening on {SERVER}")
