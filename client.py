@@ -6,7 +6,7 @@ FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "DISCONNECT"
 
 #Enter your local IP Address below
-SERVER = "192.168.19.1"
+SERVER = ""
 
 ADDR = (SERVER, PORT)
 
@@ -23,9 +23,5 @@ def send(msg) :
     print(client.recv(2048).decode(FORMAT))
 
 send("HELLO WORLD")
-input()
-send("HELLO UNIVERSE")
-input()
-send("HELLO USER")
-input()
+
 send(DISCONNECT_MESSAGE)
