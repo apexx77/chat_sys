@@ -1,6 +1,6 @@
 # chat_sys
 
-* This is a simple chat-application written using Socket programming in Python 3.
+* This is a simple chat-application written using Socket programming in Python3.
 * You can enter any valid port number in the place of 'PORT'.
 
 <h2 align="center">Tech stack</h2>
