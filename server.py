@@ -16,7 +16,7 @@ server_name = input()
 
 def handle_client(conn, addr) :
     print(f"[NEW CONNECTION] {addr} connected.")
-    client_name = conn.receive(1024).decode(FORMAT)
+    client_name = conn.recv(1024).decode(FORMAT)
     conn.send(server_name.encode(FORMAT))
 
     connected = True
