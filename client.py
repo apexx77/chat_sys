@@ -5,23 +5,26 @@ PORT = 1234
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "DISCONNECT"
 
-#Enter your local IP Address below
-SERVER = ""
+print("ENTER THE SERVER IP ADDRESS: ")
+SERVER = input()
 
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
 
-def send(msg) :
-    message = msg.encode(FORMAT)
-    msg_length = len(message)
-    send_length = str(msg_length).encode(FORMAT)
-    send_length += b' ' * (HEADER-len(send_length))
-    client.send(send_length)
-    client.send(message)
-    print(client.recv(2048).decode(FORMAT))
+print("Enter your name: ")
+host_name = input()
+client.send(host_name.encode(FORMAT))
+print("To Disconnect the server, type DISCONNECT")
+server_name = client.recv(1024).decode(FORMAT)
+connected = True
+while connected :
+    msg = input()
+    client.send(msg.encode(FORMAT))
+    if msg == DISCONNECT_MESSAGE :
+        connected = False
+    server_msg = client.recv(1024).decode(FORMAT)
+    print(host_name, ">>", server_msg)
 
-send("HELLO WORLD")
 
-send(DISCONNECT_MESSAGE)
