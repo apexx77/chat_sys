@@ -1,7 +1,6 @@
 import socket
 import threading
 
-HEADER = 64
 PORT = 1234
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
