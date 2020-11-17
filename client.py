@@ -25,6 +25,6 @@ while connected :
     if msg == DISCONNECT_MESSAGE :
         connected = False
     server_msg = client.recv(1024).decode(FORMAT)
-    print(host_name, ">>", server_msg)
+    print(server_name, ">>", server_msg)
 
 
